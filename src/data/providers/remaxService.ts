@@ -1,15 +1,15 @@
 "use server"
-
+//NOTE: bu class server tarafinda kullanilir. isteklerimizin yapildigi yer. daha duzenli olmasi icin belki trpc kullanilabilir.
 import { Http } from "@/lib/HTTP";
 import { AxiosResponse } from "axios";
 class RemaxService {
     static instance: RemaxService | null = null;
 
     static getInstance() {
-        if (!RemaxService.instance) {
-            RemaxService.instance = new RemaxService();
+        if (!this.instance) {
+            this.instance = new RemaxService();
         }
-        return RemaxService.instance;
+        return this.instance;
     }
 
     async getExample() {

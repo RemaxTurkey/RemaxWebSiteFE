@@ -1,7 +1,7 @@
 import RemaxService from "../providers/remaxService";
 
 function generateData() {
-    return RemaxService.getInstance()
+    return RemaxService.getInstance();
 }
 
 export default generateData;
