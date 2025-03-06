@@ -1,0 +1,10 @@
+{
+  "app.title": "Remax Web Sitesi",
+  "app.welcome": "Hoş Geldiniz",
+  "app.description": "Bu bir Next.js uygulamasıdır",
+  "app.button.login": "Giriş Yap",
+  "app.button.register": "Kayıt Ol",
+  "app.button.contact": "İletişim",
+  "app.button.back": "Geri Dön",
+  "app.link.welcome": "Hoş Geldiniz Sayfasına Git →"
+} 
