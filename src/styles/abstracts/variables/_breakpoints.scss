@@ -1,0 +1,21 @@
+// Breakpoint değerleri
+$breakpoint-xs: 320px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Container maksimum genişlikleri
+$container-max-width-sm: 640px;
+$container-max-width-md: 768px;
+$container-max-width-lg: 1024px;
+$container-max-width-xl: 1280px;
+$container-max-width-2xl: 1536px;
+
+// Özel breakpoint'ler
+$mobile-only: 639px;
+$tablet-portrait-up: 640px;
+$tablet-landscape-up: 768px;
+$desktop-up: 1024px;
+$large-desktop-up: 1280px; 

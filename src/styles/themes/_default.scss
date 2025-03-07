@@ -1,0 +1,86 @@
+@use 'sass:color';
+
+// Ana renkler
+$primary-color: #007bff !default;
+$secondary-color: #6c757d !default;
+$success-color: #28a745 !default;
+$danger-color: #dc3545 !default;
+$warning-color: #ffc107 !default;
+$info-color: #17a2b8 !default;
+$light-color: #f8f9fa !default;
+$dark-color: #343a40 !default;
+
+// Arka plan renkleri
+$background-primary: #ffffff !default;
+$background-secondary: #f8f9fa !default;
+
+// Metin renkleri
+$text-primary: #212529 !default;
+$text-secondary: #6c757d !default;
+$text-light: #ffffff !default;
+
+// Kenar çizgisi renkleri
+$border-color: #dee2e6 !default;
+
+// Gölge efektleri
+$box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !default;
+
+// Geçiş efektleri
+$transition-base: all .2s ease-in-out !default;
+
+// Yazı tipi
+$font-family-base: 'Segoe UI', system-ui, -apple-system, sans-serif !default;
+$font-size-base: 1rem !default;
+$line-height-base: 1.5 !default;
+
+// Boşluk değerleri
+$spacing-unit: 1rem !default;
+$container-padding: $spacing-unit !default;
+$section-margin: $spacing-unit * 2 !default;
+
+// Kenar yuvarlaklığı
+$border-radius: .25rem !default;
+$border-radius-lg: .5rem !default;
+$border-radius-sm: .2rem !default;
+
+// Medya sorguları için breakpoint'ler
+$breakpoint-sm: 576px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 992px !default;
+$breakpoint-xl: 1200px !default;
+
+// Z-index katmanları
+$z-index-dropdown: 1000 !default;
+$z-index-sticky: 1020 !default;
+$z-index-fixed: 1030 !default;
+$z-index-modal-backdrop: 1040 !default;
+$z-index-modal: 1050 !default;
+$z-index-popover: 1060 !default;
+$z-index-tooltip: 1070 !default;
+
+:root {
+  // Ana renkler
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --success-color: #{$success-color};
+  --danger-color: #{$danger-color};
+  --warning-color: #{$warning-color};
+  --info-color: #{$info-color};
+  --light-color: #{$light-color};
+  --dark-color: #{$dark-color};
+
+  // Arka plan renkleri
+  --background-primary: #{$background-primary};
+  --background-secondary: #{$background-secondary};
+
+  // Metin renkleri
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-light: #{$text-light};
+
+  // Diğer değişkenler
+  --border-color: #{$border-color};
+  --box-shadow: #{$box-shadow};
+  --transition-base: #{$transition-base};
+  --border-radius: #{$border-radius};
+}

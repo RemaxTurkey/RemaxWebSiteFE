@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Grid container
+.grid-container {
+  @include grid();
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @include respond-to(sm) {
+    max-width: $container-max-width-sm;
+  }
+  
+  @include respond-to(md) {
+    max-width: $container-max-width-md;
+  }
+  
+  @include respond-to(lg) {
+    max-width: $container-max-width-lg;
+  }
+  
+  @include respond-to(xl) {
+    max-width: $container-max-width-xl;
+  }
+}
+
+// Grid columns
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+// Grid gaps
+.gap-sm { gap: $grid-gap-sm; }
+.gap-md { gap: $grid-gap-md; }
+.gap-lg { gap: $grid-gap-lg; } 

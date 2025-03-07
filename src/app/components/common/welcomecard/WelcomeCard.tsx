@@ -13,18 +13,18 @@ function WelcomeCardComponent({ userName }: WelcomeCardProps) {
   const { t } = useTranslations();
 
   return (
-    <div className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto">
-      <h2 className="text-xl font-semibold mb-2">
+    <div className="welcome-card">
+      <h2 className="welcome-card__title">
         {t('app.welcome')} {userName ? `, ${userName}!` : '!'}
       </h2>
-      <p className="text-gray-600">
+      <p className="welcome-card__description">
         {t('app.description')}
       </p>
-      <div className="mt-4 flex gap-2">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <div className="welcome-card__buttons">
+        <button className="btn-login">
           {t('app.button.login')}
         </button>
-        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        <button className="btn-register">
           {t('app.button.register')}
         </button>
       </div>
@@ -35,7 +35,7 @@ function WelcomeCardComponent({ userName }: WelcomeCardProps) {
 // SSR'ı devre dışı bırakarak sadece client-side'da çalışacak şekilde export ediyoruz
 const WelcomeCard = dynamic(() => Promise.resolve(WelcomeCardComponent), {
   ssr: false,
-  loading: () => <div className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto">Loading...</div>
+  loading: () => <div className="welcome-card">Loading...</div>
 });
 
 export default WelcomeCard; 

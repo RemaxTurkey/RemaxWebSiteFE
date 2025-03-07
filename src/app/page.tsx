@@ -1,6 +1,6 @@
 import Image from "next/image";
 import RemaxService from "@/data/providers/remaxService";
-import ExampleButton from "@/components/ExampleButton";
+
 
 export default async function Home() {
   const data = await RemaxService.getInstance().getExample();
@@ -17,7 +17,7 @@ export default async function Home() {
           height={38}
           priority
         />
-        <ExampleButton />
+     
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
             Get started by editing{" "}

@@ -1,0 +1,60 @@
+@use 'sass:color';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Temel buton stili
+.btn {
+  @include button-style($primary-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-medium;
+  
+  // Boyutlar
+  &--sm {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-sm;
+  }
+  
+  &--lg {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-lg;
+  }
+  
+  // Varyantlar
+  &--secondary {
+    @include button-style($secondary-color);
+  }
+  
+  &--outline {
+    background-color: transparent;
+    border: $border-width-thin solid currentColor;
+    color: $primary-color;
+    
+    &:hover {
+      background-color: color.adjust($primary-color, $alpha: -0.9);
+    }
+  }
+  
+  &--ghost {
+    background-color: transparent;
+    color: $primary-color;
+    
+    &:hover {
+      background-color: color.adjust($primary-color, $alpha: -0.9);
+    }
+  }
+  
+  // Durumlar
+  &--disabled,
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  // İkonlu butonlar
+  &__icon {
+    margin-right: $spacing-xs;
+  }
+} 

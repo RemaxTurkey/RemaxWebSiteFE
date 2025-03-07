@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.welcome-card {
+  @include shadow(1);
+  background-color: $background-color;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  max-width: 28rem;
+  margin: 0 auto;
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-sm;
+    color: $text-color;
+  }
+
+  &__description {
+    color: $light-text;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__buttons {
+    @include flex($justify: flex-start);
+    gap: $spacing-sm;
+
+    .btn-login {
+      @include button-style($primary-color);
+    }
+
+    .btn-register {
+      @include button-style($secondary-color);
+    }
+  }
+
+  @include respond-to(md) {
+    padding: $spacing-xl $spacing-xl * 1.5;
+  }
+} 

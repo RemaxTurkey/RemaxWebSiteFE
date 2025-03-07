@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { defaultLocale } from "@/i18n/config";
+import '@/styles/main.scss';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +20,7 @@ export default async function RootLayout({
   const lang = resolvedParams.lang || defaultLocale;
   
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html lang={lang}>
       <body>
         {children}
       </body>

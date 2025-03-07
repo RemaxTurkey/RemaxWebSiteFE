@@ -1,0 +1,23 @@
+// Transition süreleri
+$transition-duration-fast: 150ms;
+$transition-duration-normal: 300ms;
+$transition-duration-slow: 500ms;
+
+// Transition timing fonksiyonları
+$transition-timing-ease: ease;
+$transition-timing-linear: linear;
+$transition-timing-ease-in: ease-in;
+$transition-timing-ease-out: ease-out;
+$transition-timing-ease-in-out: ease-in-out;
+
+// Hazır transition'lar
+$transition-base: all $transition-duration-normal $transition-timing-ease;
+$transition-fast: all $transition-duration-fast $transition-timing-ease;
+$transition-slow: all $transition-duration-slow $transition-timing-ease;
+
+// Özel transition'lar
+$transition-transform: transform $transition-duration-normal $transition-timing-ease;
+$transition-opacity: opacity $transition-duration-normal $transition-timing-ease;
+$transition-colors: background-color $transition-duration-normal $transition-timing-ease,
+                   border-color $transition-duration-normal $transition-timing-ease,
+                   color $transition-duration-normal $transition-timing-ease; 

@@ -2,10 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import WelcomeCard from '@/components/WelcomeCard';
+import WelcomeCard from '@/app/components/common/welcomecard';
 import { FormattedMessage } from 'react-intl';
 import { useParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
+import './welcome.scss';
 
 // Client-side only bileşen
 function WelcomePageComponent() {
@@ -14,17 +15,17 @@ function WelcomePageComponent() {
   const lang = params.lang as string;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8">
-      <h1 className="text-3xl font-bold mb-8">
+    <div className="welcome-container">
+      <h1>
         <FormattedMessage id="app.title" />
       </h1>
       
       <WelcomeCard userName="Remax" />
       
-      <div className="mt-8">
+      <div>
         <Link 
           href={`/${lang}`} 
-          className="text-blue-500 hover:text-blue-700 underline"
+          className="back-link"
         >
           ← <FormattedMessage id="app.button.back" defaultMessage="Geri Dön" />
         </Link>
