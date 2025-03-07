@@ -7,6 +7,17 @@ import { locales, isRootPath } from "@/i18n/config";
 import { useParams } from "next/navigation";
 import dynamic from "next/dynamic";
 
+// Çeviriler için yeni anahtarları ekleyelim
+// Bu normalde i18n/locales içindeki JSON dosyalarına eklenmeli
+const counterMessages = {
+  tr: {
+    "app.link.counter": "Zustand Sayaç Örneğine Git →"
+  },
+  en: {
+    "app.link.counter": "Go to Zustand Counter Example →"
+  }
+};
+
 // Dil değiştirme bileşeni
 function LanguageSwitcher({ currentLang }: { currentLang: string }) {
   // "/" karakterini kaldır (eğer varsa)
@@ -35,7 +46,7 @@ function LanguageSwitcher({ currentLang }: { currentLang: string }) {
 function HomePage() {
   // useParams hook'u ile client-side'da params'a erişim
   const params = useParams();
-  const lang = params.lang as string;
+  const lang = (params?.lang || "tr") as string;
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
@@ -66,12 +77,24 @@ function HomePage() {
           </button>
         </div>
 
-        <Link 
-          href={isRootPath(lang) ? "/welcome" : `/${lang}/welcome`}
-          className="text-blue-500 hover:text-blue-700 underline"
-        >
-          <FormattedMessage id="app.link.welcome" />
-        </Link>
+        <div className="flex flex-col gap-4">
+          <Link 
+            href={isRootPath(lang) ? "/welcome" : `/${lang}/welcome`}
+            className="text-blue-500 hover:text-blue-700 underline"
+          >
+            <FormattedMessage id="app.link.welcome" />
+          </Link>
+          
+          <Link 
+            href={isRootPath(lang) ? "/counter" : `/${lang}/counter`}
+            className="text-blue-500 hover:text-blue-700 underline"
+          >
+            <FormattedMessage 
+              id="app.link.counter" 
+              defaultMessage={counterMessages[lang as keyof typeof counterMessages]?.["app.link.counter"] || "Go to Counter Example →"} 
+            />
+          </Link>
+        </div>
       </div>
     </main>
   );

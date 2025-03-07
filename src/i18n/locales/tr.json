@@ -6,5 +6,13 @@
   "app.button.register": "Kayıt Ol",
   "app.button.contact": "İletişim",
   "app.button.back": "Geri Dön",
-  "app.link.welcome": "Hoş Geldiniz Sayfasına Git →"
+  "app.link.welcome": "Hoş Geldiniz Sayfasına Git →",
+  "app.link.counter": "Zustand Sayaç Örneğine Git →",
+  "counter.title": "Zustand Sayaç Örneği",
+  "counter.description": "Bu sayfa Zustand state yönetim kütüphanesini kullanarak basit bir sayaç örneği göstermektedir.",
+  "counter.value": "Mevcut değer:",
+  "counter.increment": "Artır",
+  "counter.decrement": "Azalt",
+  "counter.reset": "Sıfırla",
+  "counter.back": "Ana Sayfaya Dön"
 } 

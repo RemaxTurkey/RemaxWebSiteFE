@@ -6,5 +6,13 @@
   "app.button.register": "Register",
   "app.button.contact": "Contact",
   "app.button.back": "Go Back",
-  "app.link.welcome": "Go to Welcome Page →"
+  "app.link.welcome": "Go to Welcome Page →",
+  "app.link.counter": "Go to Zustand Counter Example →",
+  "counter.title": "Zustand Counter Example",
+  "counter.description": "This page demonstrates a simple counter example using the Zustand state management library.",
+  "counter.value": "Current value:",
+  "counter.increment": "Increment",
+  "counter.decrement": "Decrement",
+  "counter.reset": "Reset",
+  "counter.back": "Back to Home"
 } 
