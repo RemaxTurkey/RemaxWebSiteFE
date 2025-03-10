@@ -1,28 +1,24 @@
 'use client';
 
 import { Button } from "@/components/ui/button";
+import useSWR from 'swr';
 import { useState } from "react";
-import { getExample } from "@/data/serverActions/serverActions";
+import { getExampleData, ExampleData } from "@/data/serverActions/serverActions";
 
 export default function ExampleButton() {
-  const [data, setData] = useState<{
-    id: number;
-    createdAt: Date;
-    name: string;
-    avatar: string 
-  } | null>(null);
-  const [loading, setLoading] = useState(false);
-
-  const handleClick = async () => {
-    try {
-      setLoading(true);
-      //NOTE: bu server action client tarafindan cagirilir.
-      const result = await getExample();
-      setData(result);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    } finally {
-      setLoading(false);
+  const [id, setId] = useState(1);
+  const [shouldFetch, setShouldFetch] = useState(false);
+  
+  // SWR hook'u - Server Action ile
+  const { data, error, isLoading, mutate } = useSWR<ExampleData>(
+    shouldFetch ? ['example-data', id] : null,
+    async () => await getExampleData(id)
+  );
+  
+  const handleClick = () => {
+    setShouldFetch(true);
+    if (data) {
+      mutate();
     }
   };
 
@@ -30,16 +26,34 @@ export default function ExampleButton() {
     <div className="flex flex-col gap-4 items-center">
       <Button 
         onClick={handleClick}
-        disabled={loading}
+        disabled={isLoading}
       >
-        {loading ? 'Yükleniyor...' : 'Veriyi Getir'}
+        {isLoading ? 'Yükleniyor...' : 'Veriyi Getir'}
       </Button>
       
+      {error && (
+        <div className="p-4 bg-red-50 text-red-600 border border-red-200 rounded-lg">
+          <h3 className="font-bold">Hata</h3>
+          <p>{error.message || 'Veri çekilirken bir hata oluştu'}</p>
+        </div>
+      )}
+      
       {data && (
-        <div className="mt-4 p-4 border rounded-lg">
-          <pre className="whitespace-pre-wrap">
-            {JSON.stringify(data, null, 2)}
-          </pre>
+        <div className="mt-4 p-4 border rounded-lg w-full max-w-md">
+          <h3 className="font-bold mb-2">Veri</h3>
+          <div className="grid grid-cols-2 gap-2">
+            <span className="font-medium">ID:</span>
+            <span>{data.id}</span>
+            
+            <span className="font-medium">İsim:</span>
+            <span>{data.name}</span>
+            
+            <span className="font-medium">Oluşturulma:</span>
+            <span>{new Date(data.createdAt).toLocaleString()}</span>
+            
+            <span className="font-medium">Avatar:</span>
+            <span>{data.avatar}</span>
+          </div>
         </div>
       )}
     </div>
