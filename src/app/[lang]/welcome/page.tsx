@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import WelcomeCard from '@/app/components/common/welcomecard';
+import WelcomeCard from '@/components/common/welcomecard';
 import { FormattedMessage } from 'react-intl';
 import { useParams } from 'next/navigation';
 import dynamic from 'next/dynamic';

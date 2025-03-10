@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button/button";
 import useSWR from 'swr';
 import { useState } from "react";
 import { getExampleData, ExampleData } from "@/data/serverActions/serverActions";
