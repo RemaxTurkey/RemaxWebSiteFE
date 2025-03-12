@@ -2,10 +2,6 @@
 @import "../abstracts/mixins";
 
 .home-filter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding-left: 1rem;
   padding-right: 1rem;
   width: 100%;
@@ -14,7 +10,6 @@
     padding-left: 0;
     padding-right: 0;
     max-width: 800px;
-    margin: 0 auto;
   }
 
   &__filter {
