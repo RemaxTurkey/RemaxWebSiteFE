@@ -1,32 +1,45 @@
 import React from 'react';
 import Link from 'next/link';
 
-function FastCategories() {
-  // Category data
-  const categories = [
+interface Category {
+  id: string;
+  label: string;
+  href: string;
+}
+
+interface FastCategoriesProps {
+  categories?: Category[];
+}
+
+function FastCategories({ categories }: FastCategoriesProps) {
+  // Default kategori verileri
+  const defaultCategories: Category[] = [
     { id: 'konut', label: 'Konutlar', href: '/konut' },
-    { id: 'isyeri', label: 'Lüks Konutlar', href: '/is-yeri' },
-    { id: 'arsa', label: 'Ticari Gayrimenkuller', href: '/arsa-arazi' },
-    { id: 'bina', label: 'Arsa ve Arazi', href: '/bina' },
+    { id: 'luks', label: 'Lüks Konutlar', href: '/luks-konutlar' },
+    { id: 'ticari', label: 'Ticari Gayrimenkuller', href: '/ticari' },
+    { id: 'arsa', label: 'Arsa ve Arazi', href: '/arsa-arazi' },
   ];
 
+  // Props'tan gelen kategorileri veya varsayılan kategorileri kullan
+  const displayCategories = categories || defaultCategories;
+
   return (
-      <div className="fast-categories">
-        <div className="fast-categories__label">
-          Hızlı Kategori
-        </div>
-        <div className="fast-categories__items">
-          {categories.map((category) => (
-            <Link 
-              key={category.id} 
-              href={category.href}
-              className="fast-categories__item"
-            >
-              {category.label}
-            </Link>
-          ))}
-        </div>
+    <div className="fast-categories">
+      <div className="fast-categories__label">
+        Hızlı Kategori
       </div>
+      <div className="fast-categories__items">
+        {displayCategories.map((category) => (
+          <Link 
+            key={category.id} 
+            href={category.href}
+            className="fast-categories__item"
+          >
+            {category.label}
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }
 
