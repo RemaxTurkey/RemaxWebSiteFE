@@ -3,6 +3,8 @@
 // Abstracts
 @use './abstracts/variables' as *;
 @use './abstracts/mixins' as *;
+@use 'abstracts/variables/colors';
+@use 'abstracts/mixins/responsive' as *;
 
 // Base
 @use './base/reset';

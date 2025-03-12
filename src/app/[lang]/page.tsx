@@ -1,7 +1,8 @@
 import React from "react";
 import HomeFilter from "@/components/HomeFilter/HomeFilter";
-import FastCategories from "@/components/FastCategories/FastCategories";
-import PropertyCardMiniExample from "@/components/PropertyCardMini/PropertyCardMiniExample";
+import FontTest from "@/components/FontTest";  
+import ColorPalette from "@/components/ColorPalette/ColorPalette";
+import PropertyCardMiniExample from "@/components/PropertyCardMini/PropertyCardMiniExample"; 
 const page = () => {
   return (
     <div className="container min-h-screen mx-auto">
@@ -11,10 +12,9 @@ const page = () => {
             Sektörün en çok <br />
             <span className="font-semibold">tercih edilen markası</span>
           </span>
-          <div className="flex flex-col gap-6 md:gap-14 w-full max-w-3xl mx-auto">
-            <HomeFilter />
-            <FastCategories />
-          </div>
+          <HomeFilter />
+          <FontTest /> 
+          <ColorPalette/>
         </div>
       </div>
       <div className="w-full">

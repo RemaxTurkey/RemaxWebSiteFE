@@ -3,7 +3,6 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 import { defaultLocale } from './config';
-import dynamic from 'next/dynamic';
 
 interface ClientI18nProviderProps {
   children: React.ReactNode;
@@ -11,28 +10,21 @@ interface ClientI18nProviderProps {
   messages: Record<string, string>;
 }
 
-// Client-side only bileşen
-function ClientOnlyProvider({ 
+// Client-side bileşen
+function ClientI18nProvider({ 
   children, 
   locale, 
   messages 
 }: ClientI18nProviderProps) {
   return (
-    <div suppressHydrationWarning>
-      <IntlProvider
-        locale={locale}
-        defaultLocale={defaultLocale}
-        messages={messages}
-      >
-        {children}
-      </IntlProvider>
-    </div>
+    <IntlProvider
+      locale={locale}
+      defaultLocale={defaultLocale}
+      messages={messages}
+    >
+      {children}
+    </IntlProvider>
   );
 }
-
-// SSR'ı devre dışı bırakarak sadece client-side'da çalışacak şekilde export ediyoruz
-const ClientI18nProvider = dynamic(() => Promise.resolve(ClientOnlyProvider), {
-  ssr: false,
-});
 
 export default ClientI18nProvider;

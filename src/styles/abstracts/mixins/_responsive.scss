@@ -1,0 +1,21 @@
+@use 'sass:map';
+
+// Breakpoint değişkenleri
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  '2xl': 1536px
+);
+
+// Responsive mixin
+@mixin respond-to($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Geçersiz breakpoint: #{$breakpoint}. Geçerli breakpoint'ler: #{map.keys($breakpoints)}";
+  }
+} 
