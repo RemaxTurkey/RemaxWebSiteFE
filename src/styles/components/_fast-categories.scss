@@ -1,5 +1,5 @@
 @use "../abstracts/variables" as *;
-@import "../abstracts/mixins";
+@use "../abstracts/mixins/responsive" as *;
 
 .fast-categories {
   display: none;

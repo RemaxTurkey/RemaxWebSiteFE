@@ -11,10 +11,11 @@ const page = () => {
           <span className="text-base md:text-2xl md:text-black font-normal text-white capitalize text-center">
             Sektörün en çok <br />
             <span className="font-semibold">tercih edilen markası</span>
-        </span>
-        <HomeFilter />
-        <FontTest /> 
-       <ColorPalette/>
+          </span>
+          <HomeFilter />
+          <FontTest /> 
+          <ColorPalette/>
+        </div>
       </div>
     </div>
   );
