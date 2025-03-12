@@ -21,7 +21,7 @@ export default async function RootLayout({
   
   return (
     <html lang={lang} suppressHydrationWarning>
-      <body>
+      <body className="bg-[#F8F8F8]">
         <NextTopLoader />
         {children}
       </body>
