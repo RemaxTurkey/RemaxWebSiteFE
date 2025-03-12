@@ -1,0 +1,58 @@
+@use "../abstracts/variables" as *;
+@import "../abstracts/mixins";
+
+.fast-categories {
+  display: none;
+
+  @include respond-to(lg) {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 25px;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4B4B4B;
+    white-space: nowrap;
+
+    @include respond-to(md) {
+      font-size: 1rem;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .875rem 1.25rem;
+    min-width: 125px;
+    background-color: #f0f0f0;
+    border-radius: 9999px; // Oval shape
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    text-align: center;
+
+    @include respond-to(md) {
+      font-size: 0.875rem;
+    }
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}

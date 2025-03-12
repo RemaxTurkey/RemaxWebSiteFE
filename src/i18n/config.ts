@@ -1,13 +1,17 @@
 import { createIntl, createIntlCache } from 'react-intl';
 
+// Dil dosyalarını dinamik olarak import et
+import enMessages from './locales/en.json';
+import trMessages from './locales/tr.json';
+
 // Desteklenen diller
 export const locales = ['en', 'tr'];
 export const defaultLocale = 'tr';
 
-// Dil dosyalarını yükle
+// Dil mesajları
 export const messages = {
-  en: require('./locales/en.json'),
-  tr: require('./locales/tr.json'),
+  en: enMessages,
+  tr: trMessages,
 };
 
 // Ana sayfa URL'si için özel işaretleyici

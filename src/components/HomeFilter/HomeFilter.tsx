@@ -8,9 +8,13 @@ import { SearchIcon } from "../../../public/icons/SearchIcon";
 import { ChevronDown } from "lucide-react";
 import { createPortal } from 'react-dom';
 
-const HomeFilter = () => {
+interface HomeFilterProps {
+  defaultCategory?: string;
+}
+
+const HomeFilter = ({ defaultCategory = "konut" }: HomeFilterProps) => {
   const { t } = useTranslations();
-  const [selectedCategory, setSelectedCategory] = useState("konut");
+  const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownButtonRef = useRef<HTMLButtonElement>(null);
   const [isMounted, setIsMounted] = useState(false);
