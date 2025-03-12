@@ -1,0 +1,103 @@
+@use '../styles/abstracts/variables/colors' as colors;
+@use '../styles/abstracts/mixins' as *;
+@use "sass:color";
+
+// Renk sınıfları
+.text {
+  &-primary { color: colors.$primary-color; }
+  &-secondary { color: colors.$secondary-color; }
+  &-success { color: colors.$success-color; }
+  &-danger { color: colors.$danger-color; }
+  &-warning { color: colors.$warning-color; }
+  &-info { color: colors.$info-color; }
+  &-light { color: colors.$light-color; }
+  &-dark { color: colors.$dark-color; }
+}
+
+.bg {
+  &-primary { background-color: colors.$primary-color; }
+  &-secondary { background-color: colors.$secondary-color; }
+  &-success { background-color: colors.$success-color; }
+  &-danger { background-color: colors.$danger-color; }
+  &-warning { background-color: colors.$warning-color; }
+  &-info { background-color: colors.$info-color; }
+  &-light { background-color: colors.$light-color; }
+  &-dark { background-color: colors.$dark-color; }
+}
+
+// Hover efektleri
+.hover {
+  &-primary:hover { background-color: color.adjust(colors.$primary-color, $lightness: -10%); }
+  &-secondary:hover { background-color: color.adjust(colors.$secondary-color, $lightness: -10%); }
+  &-success:hover { background-color: color.adjust(colors.$success-color, $lightness: -10%); }
+  &-danger:hover { background-color: color.adjust(colors.$danger-color, $lightness: -10%); }
+  &-warning:hover { background-color: color.adjust(colors.$warning-color, $lightness: -10%); }
+  &-info:hover { background-color: color.adjust(colors.$info-color, $lightness: -10%); }
+}
+
+// Kenarlık renkleri
+.border {
+  &-primary { border-color: colors.$primary-color; }
+  &-secondary { border-color: colors.$secondary-color; }
+  &-success { border-color: colors.$success-color; }
+  &-danger { border-color: colors.$danger-color; }
+  &-warning { border-color: colors.$warning-color; }
+  &-info { border-color: colors.$info-color; }
+  &-light { border-color: colors.$light-color; }
+  &-dark { border-color: colors.$dark-color; }
+}
+
+// ColorPalette bileşeni stilleri
+.color-palette {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .color-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .color-preview {
+    height: 120px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .color-info {
+    padding: 1rem;
+    background: white;
+
+    .color-name {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .color-code {
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: colors.$secondary-color;
+    }
+  }
+} 

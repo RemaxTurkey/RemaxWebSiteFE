@@ -1,6 +1,6 @@
 // Ana renkler
-$primary-color: #3B82F6;  // blue-500
-$secondary-color: #22C55E;  // green-500
+$primary-color: #003da5;  
+$secondary-color: #e60e16;  
 
 // Metin renkleri
 $text-color: #4B4B4B;  // gray-700
@@ -17,9 +17,35 @@ $background-dark: #F3F4F6;  // gray-100
 // Durum renkleri
 $success-color: #22C55E;  // green-500
 $warning-color: #F59E0B;  // amber-500
-$error-color: #EF4444;  // red-500
+$danger-color: #EF4444;  // red-500
 $info-color: #3B82F6;  // blue-500
+$light-color: #f8f9fa;
+$dark-color: #343a40;
 
 // Border renkleri
 $border-color: #E5E7EB;  // gray-200
-$border-color-dark: #D1D5DB;  // gray-300 
+$border-color-dark: #D1D5DB;  // gray-300
+
+// Gri tonları skalası
+$gray-0: #EEEEEE;    // En açık gri
+$gray-05: #DADADA;   // 0.5 tonu
+$gray-1: #C5C5C5;    // 1.0 tonu
+$gray-15: #B1B1B1;   // 1.5 tonu
+$gray-2: #9C9C9C;    // 2.0 tonu
+$gray-3: #747474;    // 3.0 tonu
+$gray-4: #4B4B4B;    // 4.0 tonu
+$gray-5: #222222;    // 5.0 tonu
+$gray-6: #1B1B1B;    // 6.0 tonu
+$gray-8: #0E0E0E;    // 8.0 tonu
+$gray-10: #000000;   // En koyu gri
+
+:root {
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --success-color: #{$success-color};
+  --warning-color: #{$warning-color};
+  --danger-color: #{$danger-color};
+  --info-color: #{$info-color};
+  --light-color: #{$light-color};
+  --dark-color: #{$dark-color};
+}

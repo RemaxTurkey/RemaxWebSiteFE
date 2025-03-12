@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "../globals.css";
+import "../globals.scss";
 import { locales, defaultLocale, messages } from "@/i18n/config";
 import ClientI18nProvider from "@/i18n/ClientI18nProvider";
 
@@ -13,22 +13,25 @@ export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
+// Next.js 14'te önerilen şekilde params kullanımı
 export default async function RootLayout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode;
   params: { lang: string };
-}>) {
-  // Geçerli dili al - await ile bekleyelim
-  const resolvedParams = await Promise.resolve(params);
-  const lang = resolvedParams.lang || defaultLocale;
+}) {
+  // Params'ı await ediyoruz
+  const awaitedParams = await params;
+  
+  // Geçerli dili al
+  const currentLang = String(awaitedParams?.lang || defaultLocale);
   
   // Dil mesajlarını al
-  const langMessages = messages[lang as keyof typeof messages] || messages[defaultLocale];
+  const langMessages = messages[currentLang as keyof typeof messages] || messages[defaultLocale];
 
   return (
-    <ClientI18nProvider locale={lang} messages={langMessages}>
+    <ClientI18nProvider locale={currentLang} messages={langMessages}>
       {children}
     </ClientI18nProvider>
   );

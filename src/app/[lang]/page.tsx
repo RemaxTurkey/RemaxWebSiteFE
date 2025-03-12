@@ -1,6 +1,8 @@
 import React from "react";
 import HomeFilter from "@/components/HomeFilter/HomeFilter";
-
+import FontTest from "@/components/FontTest";  
+import ColorPalette from "@/components/ColorPalette/ColorPalette";
+ 
 const page = () => {
   return (
     <div className="container min-h-screen mx-auto">
@@ -10,6 +12,8 @@ const page = () => {
             <span className="font-semibold">tercih edilen markası</span>
         </span>
         <HomeFilter />
+        <FontTest /> 
+       <ColorPalette/>
       </div>
     </div>
   );
