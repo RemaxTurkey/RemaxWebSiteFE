@@ -2,10 +2,28 @@ import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import {setRequestLocale} from 'next-intl/server';
+import type { Metadata } from "next";
+import "../globals.scss";
+import '@/styles/main.scss';
+import NextTopLoader from 'nextjs-toploader';
+import { Inter } from 'next/font/google';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
 }
+
+// Inter fontunu tanımlama
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+  weight: ['300', '400', '500', '600', '700'],
+});
+
+export const metadata: Metadata = {
+  title: "Remax Web Sitesi",
+  description: "Remax Web Sitesi",
+};
 
 export default async function LocaleLayout({
   children,
@@ -15,7 +33,7 @@ export default async function LocaleLayout({
   params: {locale: string};
 }) {
   // Gelen `locale` değerinin geçerli olduğundan emin olun
-  const {locale} = params;
+  const {locale} = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -24,8 +42,9 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
-      <body>
+    <html lang={locale} className={`${inter.variable}`}>
+      <body className='bg-[#F8F9FB]'>
+        <NextTopLoader />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
