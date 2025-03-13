@@ -75,8 +75,8 @@ const HomeFilter = ({ defaultCategory = "konut" }: HomeFilterProps) => {
         className="dropdown-menu-portal"
         style={{
           position: 'fixed',
-          top: `${buttonRect.bottom + window.scrollY + 5}px`,
-          left: `${buttonRect.left + window.scrollX}px`,
+          top: `${buttonRect.bottom+5}px`,
+          left: `${buttonRect.left + window.scrollX+5}px`,
           width: `120px`,
           backgroundColor: 'white',
           borderRadius: '12px',
