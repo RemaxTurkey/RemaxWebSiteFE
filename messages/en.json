@@ -1,0 +1,56 @@
+{
+    "app": {
+        "title": "Remax Website",
+        "welcome": "Welcome",
+        "description": "This is a Next.js application",
+        "button": {
+            "login": "Login",
+            "register": "Register",
+            "contact": "Contact",
+            "back": "Go Back"
+        },
+        "link": {
+            "welcome": "Go to Welcome Page →",
+            "counter": "Go to Zustand Counter Example →"
+        },
+        "search": "Search"
+    },
+    "counter": {
+        "title": "Zustand Counter Example",
+        "description": "This page demonstrates a simple counter example using the Zustand state management library.",
+        "value": "Current value:",
+        "increment": "Increment",
+        "decrement": "Decrement",
+        "reset": "Reset",
+        "back": "Back to Home"
+    },
+    
+    "home": {
+        "filter": {
+            "search-by-office-name": "Search by office name",
+            "search-by-city": "Search by country and city",
+            "search-by-city-placeholder": "Search for city or district quickly"
+        },
+        "kesfedin": {
+            "title": {
+                "first": "Discover the",
+                "second": "Turkey's Largest Portfolio."
+            },
+            "tab": {
+                "discounted": "Discounted Opportunities",
+                "missed": "Missed Opportunities"
+            },
+            "button": {
+                "viewAll": "View All"
+            },
+            "property": {
+                "discounted": "Discounted!"
+            }
+        },
+        "fastcategory": {
+            "title": "Quick Category"
+        },
+        "main-title": "The Most",
+        "main-title-second": "Preferred Brand in the Sector"
+    }
+}

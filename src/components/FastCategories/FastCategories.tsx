@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-
+import { useTranslations } from 'next-intl';
 interface Category {
   id: string;
   label: string;
@@ -12,6 +12,7 @@ interface FastCategoriesProps {
 }
 
 function FastCategories({ categories }: FastCategoriesProps) {
+  const t = useTranslations();
   // Default kategori verileri
   const defaultCategories: Category[] = [
     { id: 'konut', label: 'Konutlar', href: '/konut' },
@@ -26,7 +27,7 @@ function FastCategories({ categories }: FastCategoriesProps) {
   return (
     <div className="fast-categories">
       <div className="fast-categories__label">
-        Hızlı Kategori
+        {t("home.fastcategory.title")}
       </div>
       <div className="fast-categories__items">
         {displayCategories.map((category) => (

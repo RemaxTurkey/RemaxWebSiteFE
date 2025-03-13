@@ -5,16 +5,31 @@ import './KesfedinSection.scss';
 import property1 from '../../../../../public/images/property1.webp';
 import property2 from '../../../../../public/images/property2.jpg';
 import property3 from '../../../../../public/images/property3.webp';
+import { useTranslations } from 'next-intl';
 
-// Sample property data
-const properties = [
-  {
-    id: 1,
-    images: [
-      property1.src,
-      property2.src,
-      property3.src,
-    ],
+const KesfedinSection: React.FC = () => {
+  const t = useTranslations();
+  const [activeTab, setActiveTab] = useState<'indirimli' | 'kacirilmis'>('indirimli');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [visibleCards, setVisibleCards] = useState(3);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [totalSlides, setTotalSlides] = useState(0);
+  const [sliderWidth, setSliderWidth] = useState(0);
+
+  // Constants for card layout
+  const CARD_WIDTH = 344; // Fixed card width in pixels
+  const CARD_GAP = 44;   // Gap between cards in pixels
+
+  // Sample property data
+  const properties = [
+    {
+      id: 1,
+      images: [
+        property1.src,
+        property2.src,
+        property3.src,
+      ],
     title: 'Gürsel Mahallesi&apos;nde Metrobüse ve Herşeye yakın, benzersiz Satılık Çatı katı',
     location: 'İstanbul Avrupa / Kağıthane / Gürsel Mah.',
     price: 8900000,
@@ -107,21 +122,8 @@ const properties = [
       shareCount: 4,
       isFavorite: false,
     }
-  },
-];
-
-const KesfedinSection: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'indirimli' | 'kacirilmis'>('indirimli');
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(3);
-  const sliderRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [totalSlides, setTotalSlides] = useState(0);
-  const [sliderWidth, setSliderWidth] = useState(0);
-
-  // Constants for card layout
-  const CARD_WIDTH = 344; // Fixed card width in pixels
-  const CARD_GAP = 44;   // Gap between cards in pixels
+    },
+  ];
 
   // Calculate how many cards can fit in the container and total slides
   useEffect(() => {
@@ -191,21 +193,21 @@ const KesfedinSection: React.FC = () => {
       <div className="kesfedin-section__container" ref={containerRef}>
         <div className="kesfedin-section__header">
           <div className="kesfedin-section__title">
-            <h2>Türkiye&apos;nin En Geniş</h2>
-            <h1>Portföyünü Keşfedin.</h1>
+            <h2>{t('home.kesfedin.title.first')}</h2>
+            <h1>{t('home.kesfedin.title.second')}</h1>
           </div>
           <div className="kesfedin-section__tabs">
             <button 
               className={`kesfedin-section__tab ${activeTab === 'indirimli' ? 'kesfedin-section__tab--active' : ''}`}
               onClick={() => handleTabChange('indirimli')}
             >
-              İndirimli Fırsatlar
+              {t('home.kesfedin.tab.discounted')}
             </button>
             <button 
               className={`kesfedin-section__tab ${activeTab === 'kacirilmis' ? 'kesfedin-section__tab--active' : ''}`}
               onClick={() => handleTabChange('kacirilmis')}
             >
-              Kaçırdığınız Fırsatlar
+              {t('home.kesfedin.tab.missed')}
             </button>
           </div>
         </div>
@@ -241,7 +243,7 @@ const KesfedinSection: React.FC = () => {
           <div className="kesfedin-section__navigation-wrapper">
             {/* View All Button on the left */}
             <button className="kesfedin-section__view-all-button">
-              Tümünü Görüntüle
+              {t('home.kesfedin.button.viewAll')}
             </button>
             
             {/* Dots in the center */}
