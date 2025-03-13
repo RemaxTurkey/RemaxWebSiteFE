@@ -8,7 +8,6 @@
   flex-direction: column;
   border-radius: 11px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   margin-bottom: 1rem;
   padding-top: 8px;
@@ -18,7 +17,10 @@
 
   @include respond-to(lg) {
     width: 344px;
-    border-radius: 21px;
+    border-radius: 20px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   &__image-container {
@@ -28,6 +30,11 @@
     overflow: hidden;
     border-radius: 21px;
     touch-action: pan-x; // Enable horizontal swiping on touch devices
+
+    @include respond-to(lg) {
+      height: 255px;
+      border-radius: 0px;
+    }
   }
 
   &__image {
@@ -185,8 +192,8 @@
   }
 
   &__dot {
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
@@ -194,8 +201,6 @@
 
     &--active {
       background-color: #fff;
-      width: 10px;
-      height: 10px;
     }
   }
 
@@ -203,6 +208,11 @@
     padding: 24px 8px 30px 8px;
     display: flex;
     flex-direction: column;
+
+    @include respond-to(lg) {
+      padding: 24px 12px 15px 12px;
+      gap: 22px;
+    }
   }
 
   &__title {
@@ -217,7 +227,9 @@
     margin-bottom: 10px;
 
     @include respond-to(lg) {
-      margin-bottom: 22px;
+      font-weight: 400;
+      line-height: 100%;
+      margin-bottom: 0px;
     }
   }
 
@@ -232,6 +244,14 @@
     border-radius: 8px;
     padding: 4px 8px;
     margin-left: -4px;
+
+    @include respond-to(lg) {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 100%;
+      margin-left: 0px;
+      padding: 10px 12px;
+    }
   }
 
   &__location-icon {
@@ -257,7 +277,7 @@
   &__price {
     font-size: 18px;
     font-weight: 700;
-    color: #003DA5;
+    color: #003da5;
     line-height: 100%;
     margin-left: 4px;
   }
@@ -350,7 +370,7 @@
         font-weight: 600;
         line-height: 145%;
         letter-spacing: -3%;
-        color: #8698B7;
+        color: #8698b7;
         margin-top: 2px;
       }
     }

@@ -33,7 +33,7 @@ export default async function RootLayout({
   
   return (
     <html lang={lang} className={`${inter.variable}`}>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning className="bg-[#F8F8F8]">
         <NextTopLoader />
         {children}
       </body>
