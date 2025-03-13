@@ -1,0 +1,45 @@
+{
+    "app": {
+        "title": "Remax Web Sitesi",
+        "welcome": "Hoş Geldiniz",
+        "description": "Bu bir Next.js uygulamasıdır",
+        "button": {
+            "login": "Giriş Yap",
+            "register": "Kayıt Ol",
+            "contact": "İletişim",
+            "back": "Geri Dön",
+            "link": {
+                "welcome": "Hoş Geldiniz Sayfasına Git →",
+                "counter": "Zustand Sayaç Örneğine Git →",
+                "search": "Ara"
+            }
+        }
+    },
+    "home": {
+        "filter": {
+            "search-by-city-placeholder": "İl, İlçe şeklinde hızlıca ara."
+        },
+        "kesfedin": {
+            "title": {
+                "first": "Türkiye'nin En Geniş",
+                "second": "Portföyünü Keşfedin."
+            },
+            "tab": {
+                "discounted": "İndirimli Fırsatlar",
+                "missed": "Kaçırdığınız Fırsatlar"
+            },
+            "button": {
+                "viewAll": "Tümünü Görüntüle"
+            },
+            "property": {
+                "status": "Satılık",
+                "discounted": "İndirimli!"
+            }
+        },
+        "fastcategory": {
+            "title": "Hızlı Kategori"
+        },
+        "main-title": "Sektörün En Çok",
+        "main-title-second": "Tercih Edilen Markası"
+    }
+} 

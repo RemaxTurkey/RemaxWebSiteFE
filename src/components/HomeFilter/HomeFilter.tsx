@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { FormattedMessage } from "react-intl";
-import { useTranslations } from "@/i18n/useTranslations";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { MapIcon } from "../../../public/icons/MapIcon";
 import { SearchIcon } from "../../../public/icons/SearchIcon";
@@ -13,7 +12,7 @@ interface HomeFilterProps {
 }
 
 const HomeFilter = ({ defaultCategory = "konut" }: HomeFilterProps) => {
-  const { t } = useTranslations();
+  const  t = useTranslations();
   const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownButtonRef = useRef<HTMLButtonElement>(null);
@@ -137,7 +136,7 @@ const HomeFilter = ({ defaultCategory = "konut" }: HomeFilterProps) => {
           <button className="btn-search">
             <SearchIcon />
             <span className="btn-search__text">
-              <FormattedMessage id="app.search" />
+              {t("app.search")}
             </span>
           </button>
           <button className="btn-map-link">
