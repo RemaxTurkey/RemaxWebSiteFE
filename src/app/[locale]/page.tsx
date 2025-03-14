@@ -4,7 +4,8 @@ import FastCategories from "@/components/FastCategories/FastCategories";
 import KesfedinSection from "@/components/Sections/Home/Kesfedin/KesfedinSection";
 import { useTranslations } from "next-intl";
 import FastCategoriesMobile from "@/components/FastCategories/Mobile/FastCategoriesMobile";
-const page = () => {
+
+const Page = () => {
   const t = useTranslations();
   const categories = [
     {
@@ -47,4 +48,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
