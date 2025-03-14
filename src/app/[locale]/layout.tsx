@@ -1,23 +1,24 @@
-import {NextIntlClientProvider, hasLocale} from 'next-intl';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
-import {setRequestLocale} from 'next-intl/server';
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import "../globals.scss";
-import '@/styles/main.scss';
-import NextTopLoader from 'nextjs-toploader';
-import { Inter } from 'next/font/google';
+import "@/styles/main.scss";
+import NextTopLoader from "nextjs-toploader";
+import { Inter } from "next/font/google";
+import Header from "@/components/Header/Header";
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 // Inter fontunu tanımlama
 const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
-  weight: ['300', '400', '500', '600', '700'],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -27,13 +28,13 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: {locale: string};
+  params: Promise<{ locale: string }>;
 }) {
   // Gelen `locale` değerinin geçerli olduğundan emin olun
-  const {locale} = await params;
+  const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -43,10 +44,13 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${inter.variable}`}>
-      <body className='bg-[#F8F9FB]'>
-        <NextTopLoader />
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
-      </body>
+      <NextIntlClientProvider>
+        <body className="bg-[#F8F9FB]">
+          <NextTopLoader />
+          <Header />
+          {children}
+        </body>
+      </NextIntlClientProvider>
     </html>
   );
-} 
+}
