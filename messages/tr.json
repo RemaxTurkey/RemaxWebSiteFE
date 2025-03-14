@@ -16,6 +16,25 @@
         },
         "search":"Ara"
     },
+    "navbar": {
+        "home-page": "Remax Ana Sayfa",
+        "become-consultant": "Danışman Ol",
+        "our-consultants": "Danışmanlarımız",
+        "open-office": "Ofis Aç",
+        "our-offices": "Ofislerimiz",
+        "login": "Giriş Yap",
+        "search": "Ara",
+        "user-account": "Kullanıcı Hesabı",
+        "change-language": "Dil Değiştir",
+        "main-navigation": "Ana Navigasyon",
+        "close-menu": "Menüyü Kapat",
+        "open-menu": "Menüyü Aç",
+        "about-us": "Hakkımızda",
+        "careers-remax-turkey": "Remax Türkiye'de Kariyer",
+        "design-with-remax": "Remax ile Tasarla",
+        "earthquake-awareness": "Deprem Farkındalığı",
+        "be-a-consultant": "Danışman Ol"
+    },
     "home": {
         "filter": {
             "search-by-city-placeholder": "İl, İlçe şeklinde hızlıca ara."

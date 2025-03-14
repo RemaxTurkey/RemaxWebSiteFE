@@ -15,6 +15,25 @@
         },
         "search": "Search"
     },
+    "navbar": {
+        "home-page": "Remax Home Page",
+        "become-consultant": "Become a Consultant",
+        "our-consultants": "Our Consultants",
+        "open-office": "Open an Office",
+        "our-offices": "Our Offices",
+        "login": "Login",
+        "search": "Search",
+        "user-account": "User Account",
+        "change-language": "Change Language",
+        "main-navigation": "Main Navigation",
+        "close-menu": "Close Menu",
+        "open-menu": "Open Menu",
+        "about-us": "About Us",
+        "careers-remax-turkey": "Careers at Remax Turkey",
+        "design-with-remax": "Design with Remax",
+        "earthquake-awareness": "Earthquake Awareness",
+        "be-a-consultant": "Become a Consultant"
+    },
     "counter": {
         "title": "Zustand Counter Example",
         "description": "This page demonstrates a simple counter example using the Zustand state management library.",

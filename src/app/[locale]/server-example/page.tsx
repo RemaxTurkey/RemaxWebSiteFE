@@ -10,15 +10,17 @@ export const revalidate = 60; // Her 60 saniyede bir yeniden doğrulama (ISR)
 export default async function ServerExamplePage({ 
   params 
 }: { 
-  params: { lang: string } 
+  params: Promise<{lang: string}>;
 }) {
   // Server-side veri çekme (cache'lenecek)
   const data = await getExampleData(1);
   console.log(data);
 
+  const awaitedParams = await params;
+
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Server Example Page ({params.lang})</h1>
+      <h1 className="text-2xl font-bold mb-4">Server Example Page ({awaitedParams.lang})</h1>
       
       {/* Server-side çekilen veriyi göster */}
       <div className="mb-8 p-4 border rounded-lg">

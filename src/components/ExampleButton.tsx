@@ -6,7 +6,7 @@ import { useState } from "react";
 import { getExampleData, ExampleData } from "@/data/serverActions/serverActions";
 
 export default function ExampleButton() {
-  const [id, setId] = useState(1);
+  const [id] = useState(1);
   const [shouldFetch, setShouldFetch] = useState(false);
   
   // SWR hook'u - Server Action ile

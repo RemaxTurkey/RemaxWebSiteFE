@@ -1,7 +1,7 @@
 // Property Card Mini Component Styles
 // Mobile-first approach
 @use "../abstracts/variables" as *;
-@import "../abstracts/mixins";
+@use "../abstracts/mixins" as *;
 
 .property-card-mini {
   display: flex;
